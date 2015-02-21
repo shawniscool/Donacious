@@ -1,3 +1,4 @@
+var states = ["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"];
 
 $(function(){
 	// alert("aaa");
@@ -16,13 +17,24 @@ $(function(){
 	// console.log(currentUser.get("username"));
 	$("#content").append("aa");
 	initialize();
+	console.log("after initialize function");
 });
 
-var states = ["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"]
 function initialize(){
-	$('#state')
+	console.log("initialize function");
+	var option;
+	option = document.createElement("option");
+	console.log("for loop");
+	for (i = 0; i < states.length; i ++){
+		console.log(states[i]);
+		// option.text = states[i];
+		$("#state").append('<option>' + states[i] + '</option>');
+	}
+
+	console.log("after for loop");
 	// alert("in the initialize function");
 	$("#logout").on('click',function(e){
+		console.log("in logout");
 		e.preventDefault();
 		Parse.User.logOut();
 		location.reload();
