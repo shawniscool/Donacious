@@ -9,11 +9,24 @@
 	font-style: normal;
 }
 
+*{
+	border-style:solid;
+}
 /* General grid styles */
 .cbp-ig-grid {
 	list-style: none;
 	padding: 0 0 50px 0;
 	margin: 0;
+}
+
+#log-in{
+	position: relative;
+	left: 500px;
+}
+
+#sign-up{
+	position: relative;
+	left: 525px;
 }
 
 /* Clear floats */
@@ -25,9 +38,9 @@
 
 .cbp-ig-grid:after { 
 	clear: both; 
-}
 
 /* grid item */
+}
 .cbp-ig-grid li {
 	width: 33%;
 	float: left;
