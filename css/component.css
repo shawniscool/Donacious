@@ -9,11 +9,24 @@
 	font-style: normal;
 }
 
+*{
+	border-style:solid;
+}
 /* General grid styles */
 .cbp-ig-grid {
 	list-style: none;
 	padding: 0 0 50px 0;
 	margin: 0;
+}
+
+#log-in{
+	position: relative;
+	left: 500px;
+}
+
+#sign-up{
+	position: relative;
+	left: 525px;
 }
 
 /* Clear floats */
@@ -25,13 +38,18 @@
 
 .cbp-ig-grid:after { 
 	clear: both; 
-}
 
 /* grid item */
+<<<<<<< HEAD
 .cbp-ig-grid div {
 	width: 30%;
 	margin-left:3%;
 	margin-top:2%;
+=======
+}
+.cbp-ig-grid li {
+	width: 33%;
+>>>>>>> 7c04fa48977acfe140a98dd3073403a31180805a
 	float: left;
 	height: 420px;
 	text-align: left;
