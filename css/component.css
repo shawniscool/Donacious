@@ -20,7 +20,7 @@
 /* Clear floats */
 .cbp-ig-grid:before, 
 .cbp-ig-grid:after { 
-	content: " "; 
+	/*content: " "; */
 	/*display: table; */
 }
 
@@ -57,6 +57,56 @@
 	width: 100%;
 }
 
+/*for the campaign box page*/
+#campaignname{
+	color:black;
+}
+#campaignname{
+	margin:0px;
+	width: 100%;
+	border-top:    1px dashed black;
+  	border-right:  1px dashed black; 
+  	border-left: 1px dashed black;
+  	background-color: #82B4FF;
+  	color:black;
+}
+
+#eventname{
+	margin:0px;
+	font-size:40px;
+	font-weight: 400;
+}
+
+#image{
+	/*background-color: red;*/
+	background-image: url("../images/apple.jpg");
+	/*background-repeat: no-repeat;*/
+	background-position: center;
+}
+
+#location{
+	font-size:25px;
+}
+
+#location{
+	margin-left:5%;
+}
+
+#info{
+	width:100%;
+}
+
+#image, #detail{
+	width: 50%;
+	float:left;
+	min-height: 350px;
+}
+
+#detail{
+	padding-left: 3%;
+}
+
+
 .cbp-ig-grid:after { 
 	clear: both; 
 }
@@ -87,8 +137,14 @@
 	height:30%;
 	font-size: 50px;
 	font-weight: 300;
-	background-color: #2162A3;
+	/*background-color: #00B8E6;*/
+	/*color:black;*/
 }
+
+/*.caption .title:nth-child(3n-1){
+	background-color: #1A6376;
+}*/
+
 .location{
 	font-size: 20px;
 	float:right;
@@ -97,22 +153,23 @@
 }
 
 .text, .location{
-	color:white;
+	color:black;
 
 }
 
 /* we are using a combination of borders and box shadows to control the grid lines */
-.cbp-ig-grid li:nth-child(-n+3){
+.cbp-ig-grid div:nth-child(-n+3){
 	border-top: none;
 }
 
-.cbp-ig-grid li:nth-child(3n-1),
-.cbp-ig-grid li:nth-child(3n-2) {
+.cbp-ig-grid div:nth-child(3n-1),
+.cbp-ig-grid div:nth-child(3n-2) {
 	box-shadow: 1px 0 0 #ddd;
+	color: #1A6376;
 }
 
 /* anchor style */
-.cbp-ig-grid li > a {
+.cbp-ig-grid div > a {
 	display: block;
 	height: 100%;
 	/*color: #47a3da;*/

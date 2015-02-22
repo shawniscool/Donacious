@@ -1,6 +1,3 @@
-*{
-	/*border-style: solid;*/
-}
 
 #campaignname{
 	margin:0px;
@@ -9,6 +6,7 @@
   	border-right:  1px dashed black; 
   	border-left: 1px dashed black;
   	background-color: #82B4FF;
+  	color:black;
 }
 
 #eventname{

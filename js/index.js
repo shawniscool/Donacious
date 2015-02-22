@@ -18,7 +18,6 @@ $(function(){
 	// $("#content").append("aa");
 	$("#sign-up-button").leanModal({top : 50, overlay : 0.7, closeButton: ".modal_close"});
 	$("#log-in-button").leanModal({top : 50, overlay : 0.7, closeButton: ".modal_close"});
-
 	initialize();
 });
 
@@ -91,14 +90,40 @@ function initialize(){
 	});
 	checkCurrentUser();
 	findQuery();
-	setUpCompaignPage();
+	$("#campaigninfo").hide();
+	// setTimeout(setUpCompaignPage(),10000);
 }
 
 function setUpCompaignPage(){
-	$("#content .div").on('click',function(e){
-		console.log('aaaa');
+	$(".main #content div").on('click',function(e){
 		e.preventDefault();
-		alert($(this).attr('id'));
+		$('.caption').hide();
+		$('#campaigninfo').show();
+		var id = $(this).attr('id');
+		console.log(id);
+		var campaigns = Parse.Object.extend("Campaign");
+		var query = new Parse.Query(campaigns);
+		query.equalTo("objectId", id);
+		query.find({
+			success:function(results){
+				result = results[0];
+				console.log(result);
+				console.log(result.get('name'));
+				// $('#campaignname').text("abcsadfas");
+				$('#campaignname').text(result.get('name'));
+				$('#campaignaddress').text(result.get('address'));
+				$('#campaigndescriptions').text(result.get('description'));
+				$('#campaignitems').text(result.get('items').join(','));
+				$('eventname').text(result.get('name'));
+				$('campaignlocation').text(result.get('address') + ", " + result.get('state'));
+
+
+
+			},
+			error: function(error){
+				alert("Error: " + error.code +error.message);
+			}
+	});
 	});
 }
 
@@ -147,7 +172,7 @@ function findQuery(){
 	});
 	queries.find().then(function(results){
 		$('#content').append(makeList(results));
-	});
+	}).then(setUpCompaignPage);
 }
 
 // This is the function that reads the queries results and creates HTML elements to 
@@ -167,9 +192,9 @@ function makeList(results){
 		console.log("id is " + id);
 
 		text += "<div class = 'caption' data-description = '" + description;
-		text += "' id = '" + id + "'><p class='title'><span class= 'text'> " + name;
+		text += "' id = '" + id + "'><a href = '#'><p class='title'><span class= 'text'> " + name;
 		text += "</span><br><span class= 'location'>" + location + "</span></p>"
-		text += "<img src = 'images/2.jpg' /> </div>"
+		text += "<img src = 'images/2.jpg' /></a> </div>"
 	}
 	return text;
 
