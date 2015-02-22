@@ -24,16 +24,28 @@
 	display: table; 
 }
 
-
-#log-in{
-	position: relative;
-	left: 500px;
+#log-in, #sign-up{
+	float:right;
+	margin-left: 3%;
 }
 
-#sign-up{
-	position: relative;
-	left: 525px;
+/*pop up window*/
+
+#lean_overlay {
+    position: fixed;
+    z-index:100;
+    top: 0px;
+    left: 0px;
+    height:100%;
+    width:100%;
+    background: #000;
+    display: none;
 }
+
+#sign-up-form{
+	display: none;
+}
+
 .cbp-ig-grid:after { 
 	clear: both; 
 }
@@ -49,6 +61,11 @@
 	border-top: 1px solid #ddd;
 	border-style: solid;
 }
+
+form{
+	width: 100%;
+}
+
 .title{
 	margin: 0px;
 	height:30%;
@@ -136,45 +153,6 @@
 	-moz-transition: -moz-transform 0.3s, opacity 0.2s;
 	-webkit-transition: transform 0.3s, opacity 0.2s;
 }
-
-/*.cbp-ig-grid li:hover .cbp-ig-category,
-.touch .cbp-ig-grid li .cbp-ig-category {
-	opacity: 1;
-	-webkit-transform: translateY(0px);
-	-moz-transform: translateY(0px);
-	-ms-transform: translateY(0px);
-	transform: translateY(0px);
-}
-
-/* Hover styles */
-
-/*.cbp-ig-grid li > a:hover {
-	background: #47a3da;
-}
-
-.cbp-ig-grid li > a:hover .cbp-ig-icon {
-	-webkit-transform: translateY(10px);
-	-moz-transform: translateY(10px);
-	-ms-transform: translateY(10px);
-	transform: translateY(10px);
-}
-
-.cbp-ig-grid li > a:hover .cbp-ig-icon:before,
-.cbp-ig-grid li > a:hover .cbp-ig-title {
-	color: #fff;
-}
-
-.cbp-ig-grid li > a:hover .cbp-ig-title {
-	-webkit-transform: translateY(-30px);
-	-moz-transform: translateY(-30px);
-	-ms-transform: translateY(-30px);
-	transform: translateY(-30px);
-}
-
-.cbp-ig-grid li > a:hover .cbp-ig-title:before {
-	background: #fff;
-	margin-top: 80px;
-}*/
 
 
 @media screen and (max-width: 62.75em) {

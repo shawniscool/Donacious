@@ -5,19 +5,20 @@ $(function(){
 	Parse.initialize("GwdN8Kf6cSteivzdHgNoxwR6kKZucoWnKOd0dXKr", "aZMBOI6U6P6wJFBzvpVDAlsSaQUzqNpMfTrMBWEM");
 	// alert("aaa");
 	var currentUser = Parse.User.current();
-	if (currentUser){
-		$("#content").append("Hello " + currentUser.get("username"));
-		console.log(currentUser.get("username"));
-	}
-	else{
-		$("#content").append("No one is logged in");
-	}
+	// if (currentUser){
+	// 	$("#content").append("Hello " + currentUser.get("username"));
+	// 	console.log(currentUser.get("username"));
+	// }
+	// else{
+	// 	$("#content").append("No one is logged in");
+	// }
 	// alert("current user is " + currentUser);
 	// $("#content").append("Hello " + currentUser.get("username"));
 	// console.log(currentUser.get("username"));
-	$("#content").append("aa");
-	initialize();
-	console.log("after initialize function");
+	// $("#content").append("aa");
+	// initialize();
+	$("#sign-up").leanModal({top : 100, overlay : 0.7, closeButton: ".modal_close"});
+	// $("#go").leanModal();
 });
 
 function initialize(){
