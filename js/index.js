@@ -79,34 +79,6 @@ function initialize(){
 	// setTimeout(setUpCompaignPage(),10000);
 }
 
-function setUpCompaignPage(){
-	$(".main #content div").on('click',function(e){
-		e.preventDefault();
-		$('#content').hide();
-		$('#campaigninfo').show();
-		var id = $(this).attr('id');
-		// console.log(id);
-		var campaigns = Parse.Object.extend("Campaign");
-		var query = new Parse.Query(campaigns);
-		query.equalTo("objectId", id);
-		query.find({
-			success:function(results){
-				result = results[0];
-				console.log(result);
-				console.log(result.get('name'));
-				$('#campaignname').text(result.get('name'));
-				$('#campaignaddress').text(result.get('address'));
-				$('#campaigndescriptions').text(result.get('description'));
-				$('#campaignitems').text(result.get('items').join(','));
-				$('eventname').text(result.get('name'));
-				$('campaignlocation').text(result.get('address') + ", " + result.get('state'));
-			},
-			error: function(error){
-				alert("Error: " + error.code +error.message);
-			}
-	});
-	});
-}
 
 // This function checks if the current user is logged in
 function checkCurrentUser(){
@@ -152,6 +124,36 @@ function findQuery(){
 	}).then(setUpCompaignPage);
 }
 
+// This function is used to set up a specific campaign page according to the user click
+function setUpCompaignPage(){
+	$(".main #content div").on('click',function(e){
+		e.preventDefault();
+		$('#content').hide();
+		$('#campaigninfo').show();
+		var id = $(this).attr('id');
+		// console.log(id);
+		var campaigns = Parse.Object.extend("Campaign");
+		var query = new Parse.Query(campaigns);
+		query.equalTo("objectId", id);
+		query.find({
+			success:function(results){
+				result = results[0];
+				console.log(result);
+				console.log(result.get('name'));
+				$('#campaignname').text(result.get('name'));
+				$('#campaignaddress').text(result.get('address'));
+				$('#campaigndescriptions').text(result.get('description'));
+				$('#campaignitems').text(result.get('items').join(','));
+				$('#eventname').text(result.get('name'));
+				$('#campaignlocation').text(result.get('address') + ", " + result.get('state'));
+			},
+			error: function(error){
+				alert("Error: " + error.code +error.message);
+			}
+	});
+	});
+}
+
 // This is the function that reads the queries results and creates HTML elements to 
 //  append to the main page
 function makeList(results){
@@ -172,8 +174,8 @@ function makeList(results){
 		}else{
 			image = "Furniture.png";
 		}
-		text += "<div class = 'caption' data-description = '" + description;
-		text += "' id = '" + id + "'><a href = '#'><p class='title'><span class= 'text'> " + name;
+		text += '<div class = "caption" data-description = "' + description;
+		text += '" id = "' + id + '"><a href = "#campaigninfo"><p class="title"><span class= "text">' + name;
 		text += "</span><br><span class= 'location'>" + location + "</span></p>"
 		text += "<img src = 'images/" + image + "' /></a> </div>"
 	}

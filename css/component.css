@@ -62,10 +62,10 @@
 	margin:0px;
 	width: 90%;
 	margin:auto auto;
-	border-top:    1px dashed black;
-  	border-right:  1px dashed black; 
-  	border-left: 1px dashed black;
-  	background-color: #82B4FF;
+	/*border-top:    1px dashed black;*/
+  	/*border-right:  1px dashed black; */
+  	/*border-left: 1px dashed black;*/
+  	/*background-color: #82B4FF;*/
   	color:black;
 }
 
@@ -73,6 +73,13 @@
 	margin:0px;
 	font-size:40px;
 	font-weight: 400;
+}
+#campaignlocation{
+	margin-left: 5%;
+}
+
+#campaignnamelocation{
+	text-align: center;
 }
 
 #image{
@@ -84,10 +91,7 @@
 
 #location{
 	font-size:25px;
-}
-
-#location{
-	margin-left:5%;
+	margin-left:5%;	
 }
 
 #info{
@@ -131,10 +135,13 @@
 }
 
 .title{
-	margin: 15px 0px 0px 0px;
+	margin: 15px auto 0px auto;
+	width:96%;
 	height:20%;
 	font-size: 30px;
 	font-weight: 300;
+	overflow:auto;
+	text-align: center;
 	/*background-color: #00B8E6;*/
 	/*color:black;*/
 }
