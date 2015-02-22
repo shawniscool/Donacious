@@ -28,11 +28,11 @@ function initialize(){
 	var option;
 	option = document.createElement("option");
 	console.log("for loop");
-	for (i = 0; i < states.length; i ++){
-		console.log(states[i]);
-		// option.text = states[i];
-		$("#state").append('<option>' + states[i] + '</option>');
-	}
+	// for (i = 0; i < states.length; i ++){
+	// 	console.log(states[i]);
+	// 	// option.text = states[i];
+	// 	$("#state").append('<option>' + states[i] + '</option>');
+	// }
 	console.log("after for loop");
 	// alert("in the initialize function");
 	$("#log-out-button").on('click',function(e){
@@ -91,8 +91,10 @@ function initialize(){
 		});
 	});
 	checkCurrentUser();
+	findQuery();
 }
 
+// This function checks if the current user is logged in
 function checkCurrentUser(){
 	var currentUser = Parse.User.current();
 	if (currentUser){
@@ -105,6 +107,7 @@ function checkCurrentUser(){
 	}
 }
 
+// This function is used to create new user object in the parse app
 function createNewUser(username, passw, email, address, city, state, zipcode){
 	var user = new Parse.User();
 	user.set("username",username);
@@ -126,3 +129,36 @@ function createNewUser(username, passw, email, address, city, state, zipcode){
 	});
 }
 
+function findQuery(){
+	var campaigns = Parse.Object.extend("Campaign");
+	var queries = new Parse.Query(campaigns);
+	queries.find({
+		error: function(error){
+			alert("Error: " + error.code +error.message);
+		}
+	});
+	queries.find().then(function(results){
+		$('#content').append(makeList(results));
+	});
+}
+
+// This is the function that reads the queries results and creates HTML elements to 
+//  append to the main page
+function makeList(results){
+	var text = 0, description, name, location;
+	for (var i = 0; i < results.length; i++){
+		name = results[i].get("name");
+		console.log("name is " + name);
+		description = results[i].get("description");
+		location = results[i].get('city') + "," + results[i].get('state');
+		console.log("description is " + description);
+		console.log("location is " + location);
+
+		text += "<div class = 'caption' data-description = '" + description;
+		text += "'><p class='title'><span class= 'text'> " + name;
+		text += "</span><br><span class= 'location'>" + location + "</span></p>"
+		text += "<img src = 'images/2.jpg' /> </div>"
+	}
+	return text;
+
+}
