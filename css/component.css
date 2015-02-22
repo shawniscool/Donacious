@@ -131,9 +131,9 @@
 }
 
 .title{
-	margin: 0px;
-	height:30%;
-	font-size: 50px;
+	margin: 15px 0px 0px 0px;
+	height:20%;
+	font-size: 30px;
 	font-weight: 300;
 	/*background-color: #00B8E6;*/
 	/*color:black;*/
@@ -145,6 +145,7 @@
 
 .location{
 	font-size: 20px;
+	margin-top: 5%;
 	float:right;
 	position:relative;
 	left:-5%;
