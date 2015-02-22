@@ -16,8 +16,10 @@ $(function(){
 	// $("#content").append("Hello " + currentUser.get("username"));
 	// console.log(currentUser.get("username"));
 	// $("#content").append("aa");
-	// initialize();
-	$("#sign-up").leanModal({top : 100, overlay : 0.7, closeButton: ".modal_close"});
+	$("#sign-up-button").leanModal({top : 50, overlay : 0.7, closeButton: ".modal_close"});
+	$("#log-in-button").leanModal({top : 50, overlay : 0.7, closeButton: ".modal_close"});
+
+	initialize();
 	// $("#go").leanModal();
 });
 
@@ -31,33 +33,35 @@ function initialize(){
 		// option.text = states[i];
 		$("#state").append('<option>' + states[i] + '</option>');
 	}
-
 	console.log("after for loop");
 	// alert("in the initialize function");
-	$("#logout").on('click',function(e){
+	$("#log-out-button").on('click',function(e){
 		console.log("in logout");
 		e.preventDefault();
 		Parse.User.logOut();
 		location.reload();
-
+		console.log("logged out here");
 	});
 	$("#signup").on('click',function(e){
-		e.preventDefault;
-		username = $('#signupusername').val();
-		password = $('#signuppassword').val();
-		email = $('#signupemail').val()
+		e.preventDefault();
+		username = $('#username').val();
+		password = $('#password').val();
+		email = $('#email').val()
+		address = $('#address').val()
+		city = $('#city').val()
+		state = $('#state').val()
+		zipcode = $('#zipcode').val()
+		
 		if (username == '' || password == '' || email == ''){
 			alert("Please complete all fields");
 			return;
 		}
-		createNewUser(username,password,email);
-		// console.log(userName);
-		// alert(userName);
+		createNewUser(username,password,email, address, city, state, zipcode);
 	});
-	$("#signin").on('click',function(e){
+	$("#login").on('click',function(e){
 		e.preventDefault();
-		username = $('#signinusername').val();
-		password = $('#signinpassword').val();
+		username = $('#loginusername').val();
+		password = $('#loginpassword').val();
 		if (username == '' || password == ''){
 			alert("Please complete all fields");
 			return;
@@ -69,7 +73,6 @@ function initialize(){
 			},
 			error: function(user,error){
 				alert("Error: " + error.code + " " + error.message);
-				// alert("log in failed")
 			}
 		});
 	});
@@ -87,13 +90,30 @@ function initialize(){
 		  }
 		});
 	});
+	checkCurrentUser();
 }
 
-function createNewUser(username, passw, email){
+function checkCurrentUser(){
+	var currentUser = Parse.User.current();
+	if (currentUser){
+		console.log("current user is logged in");
+		$('#log-in-button').hide();
+		$('#sign-up-button').hide();
+	}else{
+		$('#log-out-button').hide();
+		$('#create-campaign-button').hide();
+	}
+}
+
+function createNewUser(username, passw, email, address, city, state, zipcode){
 	var user = new Parse.User();
 	user.set("username",username);
 	user.set("password",passw);
 	user.set("email",email);
+	user.set("address",address);
+	user.set("city",city);
+	user.set("state",state);
+	user.set("zipcode",zipcode);
 	user.signUp(null,{
 		success: function(user){
 			alert("This user is registered!");

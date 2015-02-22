@@ -24,7 +24,7 @@
 	display: table; 
 }
 
-#log-in, #sign-up{
+#log-in-button, #sign-up-button,#log-out-button, #create-campaign-button {
 	float:right;
 	margin-left: 3%;
 }
@@ -42,13 +42,18 @@
     display: none;
 }
 
-#sign-up-form{
+#sign-up-form, #log-in-form, #create-campaign-form{
 	display: none;
 	background-color:white;
-	border:100px solid white;
+	border:70px solid white;
 	font-size: 20px;
 	border-radius:20px;
+}
 
+.form-captions{
+	font-size:25px;
+	font-weight: bold;
+	width: 100%;
 }
 
 .cbp-ig-grid:after { 
@@ -67,8 +72,12 @@
 	border-style: solid;
 }
 
-form{
-	width: 100%;
+/*form{*/
+	/*width: 100%;*/
+/*}*/
+
+#form{
+	text-align: center;
 }
 
 .title{

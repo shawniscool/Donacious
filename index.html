@@ -22,17 +22,13 @@
 		<div class="container">
 			<header class="clearfix">
 				<span>Donacious
-					<!-- <span class="bp-icon bp-icon-about" data-content="The Blueprints are a collection of basic and minimal website concepts, components, plugins and layouts with minimal style for easy adaption and usage, or simply for inspiration."></span> -->
-						<a id="log-in" rel = "leanModal" name = "sign-in-form" href = "#sign-in-form">Log In</a>
+						<a id="log-in-button" rel = "leanModal" name = "log-in-form" href = "#log-in-form">Log In</a>
 
-						<a id="sign-up" rel = "leanModal" name = "sign-up-form" href = "#sign-up-form">Sign Up</a>
+						<a id="sign-up-button" rel = "leanModal" name = "sign-up-form" href = "#sign-up-form">Sign Up</a>
+						<a href = "#" id="log-out-button"> Log Out </a>
+						<a id="create-campaign-button" rel = "leanModal" name = "create-campaign-form" href = "campaignform.html">Create Camapaign</a>
 				</span>
 				<h1>Donate your physical goods to those who need it!</h1>
-				<!-- <nav>
-					<a href="http://tympanus.net/Blueprints/ViewModeSwitch/" class="bp-icon bp-icon-prev" data-info="previous Blueprint"><span>Previous Blueprint</span></a>
-					<a href="http://tympanus.net/codrops/?p=15657" class="bp-icon bp-icon-drop" data-info="back to the Codrops article"><span>back to the Codrops article</span></a>
-					<a href="http://tympanus.net/codrops/category/blueprints/" class="bp-icon bp-icon-archive" data-info="Blueprints archive"><span>Go to the archive</span></a>
-				</nav> -->
 			</header>	
 			<div class="main" class = "overlay">
 				<ul class="cbp-ig-grid">
@@ -54,16 +50,46 @@
 						<img src="images/2.jpg" alt="Illustration of Cafe Racer"/>
 						</div>
 	
-		<table cellspacing="10" align="center" id="sign-up-form">
+		
+
+		<table id="sign-up-form">
+		<caption class="form-captions">Submit your registration!</caption>
 			<tr><td><label>Username</label></td><td><input type="text" id="username"></td></tr>
-			<tr><td><label>Password</label></td><td><input type="text" id="password"></td></tr>
+			<tr><td><label >Password</label></td><td><input type="password" id="password"></td></tr>
 			<tr><td><label>Email</label></td><td><input type="text" id="email"></td></tr>
 			<tr><td><label>Address</label></td><td><input type="text" id="address"></td></tr>
 			<tr><td><label>City</label></td><td><input type="text" id="city"></td></tr>
 			<tr><td><label>State</label></td><td><input type="text" id="state"></td></tr>
 			<tr><td><label>Zip Code</label></td><td><input type="text" id="zipcode"></td>	</tr>
-		    <tr><td><td><button type="submit" id="signup">Sign Up</button></td>	</tr>
-		</table>
+		    <tr><td><td><button type="submit" id="signup">Sign Up</button></td></td>	</tr>
+		</table> 
+		<table id="log-in-form">
+			<caption class="form-captions">Login info</caption>
+			<tr><td><label>Username</label></td><td><input type="text" id="loginusername"></td></tr>
+			<tr><td><label >Password</label></td><td><input type="password" id="loginpassword"></td></tr>
+		    <tr><td><td><button type="submit" id="login">Log In</button></td></td>	</tr>
+		</table> 
+
+		<div id="create-campaign-form">
+			<h2>Campaign Registration</h2>
+				<p style="text-align:center"> Campaign Name:<input type="text" name="Name of Campaign" size="15" Maxlength= "40"/></p>
+				<p>Description:</p>
+				<p style="text-align:center">	
+					<textarea name="Description" cols="50" rows="5"> Enter a description...</textarea></p>
+				<p> Items of Interest:<input type = "checkbox" name= "Items" value = "Non-Perishable Foods" unchecked="unchecked" />Food
+					<input type = "checkbox" name= "Items" value = "Clothing" unchecked="unchecked" />Clothes
+					<input type = "checkbox" name= "Items" value = "Furniture" unchecked="unchecked" />Furniture
+				<p> Address:<input type="checkbox" name= "address" value= "Current Address" uncheacked="uncheaked"/>Use Current Address<input type="checkbox" name= "address" value= "New Address" uncheacked="uncheaked"/>Use New Address</p> 
+				<table align="center">
+				<tr><td><label>Address</label></td><td><input type="text" id="address"></td></tr>
+				<tr><td><label>City</label></td><td><input type="text" id="city"></td></tr><tr><td><label>State</label></td>
+				<td><input type="text" id="state"></td></tr><tr><td><label>Zip Code</label></td><td><input type="text" id="zipcode"></td></tr>
+				</table>
+				<table align="center"<tr><td colspan=2><button type="submit" id="Submit">Submit</button>
+				</td></tr>
+		</div>
+
+
 	
 
 				</ul>
