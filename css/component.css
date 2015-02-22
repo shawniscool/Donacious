@@ -58,12 +58,10 @@
 }
 
 /*for the campaign box page*/
-#campaignname{
-	color:black;
-}
-#campaignname{
+#campaigninfo{
 	margin:0px;
-	width: 100%;
+	width: 90%;
+	margin:auto auto;
 	border-top:    1px dashed black;
   	border-right:  1px dashed black; 
   	border-left: 1px dashed black;

@@ -32,6 +32,12 @@ body {
    margin:20px
 }
 
+#logo{
+	margin:0px;
+	float:left;
+	width:8%;
+}
+
 a {
 	color: #f0f0f0;
 	text-decoration: none;
@@ -152,7 +158,10 @@ a:hover {
 	content: "\e000";
 }
 .bp-icon-drop:after {
-	content: "\e001";
+	/*content: "\e001";*/
+	/*content:url("../images/key-icon.png");*/
+	background-image:url("../images/key-icon.png");
+	background-position: center;
 }
 .bp-icon-archive:after {
 	content: "\e002";

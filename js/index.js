@@ -1,38 +1,23 @@
 var states = ["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"];
 
 $(function(){
-	// alert("aaa");
 	Parse.initialize("GwdN8Kf6cSteivzdHgNoxwR6kKZucoWnKOd0dXKr", "aZMBOI6U6P6wJFBzvpVDAlsSaQUzqNpMfTrMBWEM");
-	// alert("aaa");
 	var currentUser = Parse.User.current();
-	// if (currentUser){
-	// 	$("#content").append("Hello " + currentUser.get("username"));
-	// 	console.log(currentUser.get("username"));
-	// }
-	// else{
-	// 	$("#content").append("No one is logged in");
-	// }
-	// alert("current user is " + currentUser);
-	// $("#content").append("Hello " + currentUser.get("username"));
-	// console.log(currentUser.get("username"));
-	// $("#content").append("aa");
 	$("#sign-up-button").leanModal({top : 50, overlay : 0.7, closeButton: ".modal_close"});
 	$("#log-in-button").leanModal({top : 50, overlay : 0.7, closeButton: ".modal_close"});
 	initialize();
 });
 
+// initialization function
 function initialize(){
 	console.log("initialize function");
 	var option;
 	option = document.createElement("option");
-	console.log("for loop");
 	// for (i = 0; i < states.length; i ++){
 	// 	console.log(states[i]);
 	// 	// option.text = states[i];
 	// 	$("#state").append('<option>' + states[i] + '</option>');
 	// }
-	console.log("after for loop");
-	// alert("in the initialize function");
 	$("#log-out-button").on('click',function(e){
 		console.log("in logout");
 		e.preventDefault();
@@ -97,10 +82,10 @@ function initialize(){
 function setUpCompaignPage(){
 	$(".main #content div").on('click',function(e){
 		e.preventDefault();
-		$('.caption').hide();
+		$('#content').hide();
 		$('#campaigninfo').show();
 		var id = $(this).attr('id');
-		console.log(id);
+		// console.log(id);
 		var campaigns = Parse.Object.extend("Campaign");
 		var query = new Parse.Query(campaigns);
 		query.equalTo("objectId", id);
@@ -109,16 +94,12 @@ function setUpCompaignPage(){
 				result = results[0];
 				console.log(result);
 				console.log(result.get('name'));
-				// $('#campaignname').text("abcsadfas");
 				$('#campaignname').text(result.get('name'));
 				$('#campaignaddress').text(result.get('address'));
 				$('#campaigndescriptions').text(result.get('description'));
 				$('#campaignitems').text(result.get('items').join(','));
 				$('eventname').text(result.get('name'));
 				$('campaignlocation').text(result.get('address') + ", " + result.get('state'));
-
-
-
 			},
 			error: function(error){
 				alert("Error: " + error.code +error.message);
@@ -165,36 +146,36 @@ function createNewUser(username, passw, email, address, city, state, zipcode){
 function findQuery(){
 	var campaigns = Parse.Object.extend("Campaign");
 	var queries = new Parse.Query(campaigns);
-	queries.find({
-		error: function(error){
-			alert("Error: " + error.code +error.message);
-		}
-	});
 	queries.find().then(function(results){
-		$('#content').append(makeList(results));
+		var text = makeList(results)
+		$('#content').append(text);
 	}).then(setUpCompaignPage);
 }
 
 // This is the function that reads the queries results and creates HTML elements to 
 //  append to the main page
 function makeList(results){
-	var text = 0, description, name, location, id;
+	var description, name, location, id;
+	var text ='', image ='';
 	for (var i = 0; i < results.length; i++){
 		result = results[i]
-		console.log(result);
 		name = result.get("name");
-		console.log("name is " + name);
 		description = result.get("description");
 		location = result.get('city') + "," + result.get('state');
 		id = result.id;
-		console.log("description is " + description);
-		console.log("location is " + location);
-		console.log("id is " + id);
-
+		items = result.get('items');
+		console.log("items are " + items[0]);
+		if (items.indexOf("Food") >-1){
+			image = "Food.png";
+		} else if (items.indexOf("Clothes") > -1){
+			image = "Clothes.png";
+		}else{
+			image = "Clothes.png";
+		}
 		text += "<div class = 'caption' data-description = '" + description;
 		text += "' id = '" + id + "'><a href = '#'><p class='title'><span class= 'text'> " + name;
 		text += "</span><br><span class= 'location'>" + location + "</span></p>"
-		text += "<img src = 'images/2.jpg' /></a> </div>"
+		text += "<img src = 'images/" + image + "' /></a> </div>"
 	}
 	return text;
 
