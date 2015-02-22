@@ -39,7 +39,7 @@ body {
 }
 
 a {
-	color: #f0f0f0;
+	/*color: #f0f0f0;*/
 	text-decoration: none;
 }
 
@@ -52,8 +52,9 @@ a:hover {
 	max-width: 69em;
 	margin: 0 auto;
 	padding: 2.875em 1.875em 3em;
-	background-color:#3772AC;
+	/*background-color:#3772AC;*/
 	border-radius:5px;
+	border-bottom: dotted;
 }
 
 .main {
@@ -68,7 +69,10 @@ a:hover {
 	margin: 0 0 0.6em 0;
 	float: left;
 	font-weight: 400;
-	color:white;
+	letter-spacing: 2px;
+	color: black;
+	font-family: Lato;
+	line-height: 2em;
 }
 
 .container > header > span {
@@ -160,11 +164,16 @@ a:hover {
 .bp-icon-drop:after {
 	/*content: "\e001";*/
 	/*content:url("../images/key-icon.png");*/
-	background-image:url("../images/key-icon.png");
+	content:"";
+	background-image:url("../images/exit-icon-blue.png");
 	background-position: center;
 }
 .bp-icon-archive:after {
-	content: "\e002";
+	/*content: "\e002";*/
+	content: "";
+	background-image:url("../images/key-icon-blue.png");
+	background-position: center;
+
 }
 .bp-icon-about:after {
 	content: "\e003";
@@ -203,6 +212,8 @@ a {
     outline: none;
     border-style: solid;
     padding-left:1%;
+    border-style: solid;
+	border-width: 1px;
 }
 
 a img {
@@ -210,8 +221,10 @@ a img {
 }
 
 .caption {
+
 	display: inline-block;
 	position: relative;
+
 	/*margin: 10px;*/
 	margin: 0px;
 	overflow: hidden;	

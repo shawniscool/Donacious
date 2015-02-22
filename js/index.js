@@ -170,7 +170,7 @@ function makeList(results){
 		} else if (items.indexOf("Clothes") > -1){
 			image = "Clothes.png";
 		}else{
-			image = "Clothes.png";
+			image = "Furniture.png";
 		}
 		text += "<div class = 'caption' data-description = '" + description;
 		text += "' id = '" + id + "'><a href = '#'><p class='title'><span class= 'text'> " + name;
