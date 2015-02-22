@@ -13,11 +13,13 @@ function initialize(){
 	console.log("initialize function");
 	var option;
 	option = document.createElement("option");
-	// for (i = 0; i < states.length; i ++){
-	// 	console.log(states[i]);
-	// 	// option.text = states[i];
-	// 	$("#state").append('<option>' + states[i] + '</option>');
-	// }
+	for (i = 0; i < states.length; i ++){
+		// console.log(states[i]);
+		// option.text = states[i];
+		$("#sign-up-state").append('<option>' + states[i] + '</option>');
+		$("#campaign-state").append('<option>' + states[i] + '</option>');
+
+	}
 	$("#log-out-button").on('click',function(e){
 		console.log("in logout");
 		e.preventDefault();
@@ -32,7 +34,7 @@ function initialize(){
 		email = $('#email').val()
 		address = $('#address').val()
 		city = $('#city').val()
-		state = $('#state').val()
+		state = $('#sign-up-state').val()
 		zipcode = $('#zipcode').val()
 		
 		if (username == '' || password == '' || email == ''){

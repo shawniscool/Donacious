@@ -21,14 +21,11 @@ $(function(){
 		campaign.set('description',$('#description').val());
 		campaign.set('address',$('#address').val());
 		campaign.set('city',$('#city').val());
-		campaign.set('state',$('#state').val());
+		campaign.set('state',$('#campaign-state').val());
 		campaign.set('zipcode',$('#zipcode').val());
-		console.log(campaign);
-		console.log("aaa2");
 		campaign.save(null,{
 			success: function(result){
 			alert('New object created');
-			// location.reload();
 
 		},
 		error:function(result,error){

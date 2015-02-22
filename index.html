@@ -5,9 +5,9 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 		<title>Donacious</title>
-		<meta name="description" content="Blueprint: Responsive Icon Grid" />
-		<meta name="keywords" content="icon grid, hover, responsive, portfolio, template" />
-		<meta name="author" content="Codrops" />
+		<meta name="description" content="Online donations" />
+		<meta name="keywords" content="donations, physical goods, platform, clothes, food" />
+		<meta name="author" content="Swat Team" />
 		<link rel="shortcut icon" href="../favicon.ico">
 		<link rel="stylesheet" type="text/css" href="css/default.css" />
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
@@ -31,10 +31,6 @@
 						<a id="create-campaign-button" rel = "leanModal" name = "create-campaign-form" href = "campaignform.html">Create Camapaign</a>
 				</span>
 				<h1>Goods donation to those who need it</h1>
-				<!-- <nav>
-					<a href="#" class="bp-icon bp-icon-drop" data-info="create campaign"><span>create a campaign</span></a>
-					<a href="#" class="bp-icon bp-icon-archive" data-info="Log Out"><span>Log Out</span></a>
-				</nav> -->
 			</header>	
 			<div class="main" class = "overlay">
 				<ul class="cbp-ig-grid" id = "content">	
@@ -46,7 +42,7 @@
 			<tr><td><label>Email</label></td><td><input type="text" id="email"></td></tr>
 			<tr><td><label>Address</label></td><td><input type="text" id="address"></td></tr>
 			<tr><td><label>City</label></td><td><input type="text" id="city"></td></tr>
-			<tr><td><label>State</label></td><td><input type="text" id="state"></td></tr>
+			<tr><td><label>State</label></td><td><select id="sign-up-state"> </select></td></tr>
 			<tr><td><label>Zip Code</label></td><td><input type="text" id="zipcode"></td>	</tr>
 		    <tr><td><td><button type="submit" id="signup">Sign Up</button></td></td>	</tr>
 		</table> 
@@ -56,26 +52,6 @@
 			<tr><td><label >Password</label></td><td><input type="password" id="loginpassword"></td></tr>
 		    <tr><td><td><button type="submit" id="login">Log In</button></td></td>	</tr>
 		</table> 
-
-		<div id="create-campaign-form">
-			<h2>Campaign Registration</h2>
-				<p style="text-align:center"> Campaign Name:<input type="text" name="Name of Campaign" size="15" Maxlength= "40"/></p>
-				<p>Description:</p>
-				<p style="text-align:center">	
-					<textarea name="Description" cols="50" rows="5"> Enter a description...</textarea></p>
-				<p> Items of Interest:<input type = "checkbox" name= "Items" value = "Non-Perishable Foods" unchecked="unchecked" />Food
-					<input type = "checkbox" name= "Items" value = "Clothing" unchecked="unchecked" />Clothes
-					<input type = "checkbox" name= "Items" value = "Furniture" unchecked="unchecked" />Furniture
-				<p> Address:<input type="checkbox" name= "address" value= "Current Address" uncheacked="uncheaked"/>Use Current Address<input type="checkbox" name= "address" value= "New Address" uncheacked="uncheaked"/>Use New Address</p> 
-				<table align="center">
-				<tr><td><label>Address</label></td><td><input type="text" id="address"></td></tr>
-				<tr><td><label>City</label></td><td><input type="text" id="city"></td></tr><tr><td><label>State</label></td>
-				<td><input type="text" id="state"></td></tr><tr><td><label>Zip Code</label></td><td><input type="text" id="zipcode"></td></tr>
-				</table>
-				<table align="center"<tr><td colspan=2><button type="submit" id="Submit">Submit</button>
-				</td></tr></table></p>
-				</div>
-				</div>
 				<div id ="campaigninfo">
 				<div id = "campaignnamelocation">
 					<span id = "eventname"></span><span id = "campaignlocation"></span>
