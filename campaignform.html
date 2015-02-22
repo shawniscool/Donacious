@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="css/CForm.css"/>
+	<link rel="stylesheet" type="text/css" href="css/default.css" />
+</head>
+<h2>Campaign Registration</h2>
+<form action="file:///C:/Users/Diana/Documents/GitHub/Donacious/campaignform.html">
+<p style="text-align:center"> Campaign Name:
+	<input type="text" name="Name of Campaign" size="15" Maxlength= "40"/>
+</p>
+<p>Description:</p>
+<p style="text-align:center">	
+	<textarea name="Description" cols="50" rows="5"> Enter a description...</textarea>
+</p>
+<p> Items of Interest:
+	<br />
+	<input type = "checkbox" name= "Items" value = "Non-Perishable Foods" unchecked="unchecked" />Food
+	<input type = "checkbox" name= "Items" value = "Clothing" unchecked="unchecked" />Clothes
+	<input type = "checkbox" name= "Items" value = "Furniture" unchecked="unchecked" />Furniture
+<p> Address:
+    <br / >
+    <input type="checkbox" name= "address" value= "Current Address" uncheacked="uncheaked"/>Use Current Address
+     <input type="checkbox" name= "address" value= "New Address" uncheacked="uncheaked"/>Use New Address
+</p> 
+
+<table align="center">
+	<tr>
+		<td><label>Address</label></td>
+		<td><input type="text" id="address"></td>
+    </tr>
+	
+	<tr>
+		<td><label>City</label></td>
+		<td><input type="text" id="city"></td>
+	</tr>
+	<tr>
+		<td><label>State</label></td>
+		<td><input type="text" id="state"></td>
+	</tr>
+	<tr>
+		<td><label>Zip Code</label></td>
+		<td><input type="text" id="zipcode"></td>
+    </tr>
+	
+</table>
+<table align="center">
+<tr>
+		<td colspan=2>
+		<button type="submit" id="Submit">Submit</button>
+</td>	
+</tr>
+		
+</html>
