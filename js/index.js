@@ -20,7 +20,6 @@ $(function(){
 	$("#log-in-button").leanModal({top : 50, overlay : 0.7, closeButton: ".modal_close"});
 
 	initialize();
-	// $("#go").leanModal();
 });
 
 function initialize(){
@@ -92,6 +91,15 @@ function initialize(){
 	});
 	checkCurrentUser();
 	findQuery();
+	setUpCompaignPage();
+}
+
+function setUpCompaignPage(){
+	$("#content .div").on('click',function(e){
+		console.log('aaaa');
+		e.preventDefault();
+		alert($(this).attr('id'));
+	});
 }
 
 // This function checks if the current user is logged in
@@ -145,17 +153,21 @@ function findQuery(){
 // This is the function that reads the queries results and creates HTML elements to 
 //  append to the main page
 function makeList(results){
-	var text = 0, description, name, location;
+	var text = 0, description, name, location, id;
 	for (var i = 0; i < results.length; i++){
-		name = results[i].get("name");
+		result = results[i]
+		console.log(result);
+		name = result.get("name");
 		console.log("name is " + name);
-		description = results[i].get("description");
-		location = results[i].get('city') + "," + results[i].get('state');
+		description = result.get("description");
+		location = result.get('city') + "," + result.get('state');
+		id = result.id;
 		console.log("description is " + description);
 		console.log("location is " + location);
+		console.log("id is " + id);
 
 		text += "<div class = 'caption' data-description = '" + description;
-		text += "'><p class='title'><span class= 'text'> " + name;
+		text += "' id = '" + id + "'><p class='title'><span class= 'text'> " + name;
 		text += "</span><br><span class= 'location'>" + location + "</span></p>"
 		text += "<img src = 'images/2.jpg' /> </div>"
 	}

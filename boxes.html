@@ -1,21 +1,55 @@
 <!DOCTYPE html>
-<html>
-	<link rel="stylesheet" type="text/css" href="css/boxesss.css" />
-	<div id="box">
-		<div id="box1"></div>
-		
-		<div id="box2">
-			<div id="box21"></div>
-		</div>
-		<div id="box3">
-			<div id="box31">
-			<div id="box32">
-				<div id="box33"></div>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Donacious</title>
+		<meta name="description" content="Blueprint: Responsive Icon Grid" />
+		<meta name="keywords" content="icon grid, hover, responsive, portfolio, template" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<link rel="stylesheet" type="text/css" href="css/boxesss.css" />
+
+		<script src="js/modernizr.custom.js"></script>
+		<script src="js/jquery-2.1.3.min.js"></script>
+		<script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.3.4.min.js"></script>
+		<script type="text/javascript" src="js/jquery.leanModal.min.js"></script>
+		<script src="js/index.js"></script>
+
+	</head>
+	<body>
+		<div class="container">
+			<header class="clearfix">
+				<span><a href = "index.html" id="heading">Donacious </a>
+						<a id="log-in-button" rel = "leanModal" name = "log-in-form" href = "#log-in-form">Log In</a>
+
+						<a id="sign-up-button" rel = "leanModal" name = "sign-up-form" href = "#sign-up-form">Sign Up</a>
+						<a href = "#" id="log-out-button"> Log Out </a>
+						<a id="create-campaign-button" rel = "leanModal" name = "create-campaign-form" href = "campaignform.html">Create Camapaign</a>
+				</span>
+				<h1>Donate your physical goods to those who need it!</h1>
+			</header>	
+			<div class="main" class = "overlay">
+				<div id = "campaignname">
+					<p id = "eventname"> Food Event <span id = "location">Washington, DC</span></p>
+				</div>
+				<div id = "info">
+					<div id = "image"> 
+					</div>
+					<div id = "detail">
+						<p>Organizer: <b><span id="name"> Swarthmore College</span></b></p>
+						<p> Description of the campaign: <span id ="campaign"> Here we go! </span></p>
+						<p>Campaign location: <span id="address">500 College Avenue, Swarthmore, PA 19081</span></p>
+						<p> Looking for <b><span id="items">Food, Books</span></b></p>
+
+
+					</div>
+				</div>
 			</div>
 
 		</div>
-			
-			
-		</div>
-	</div>
+	</body>
 </html>
